@@ -1,6 +1,6 @@
 # KRecentTracker
 
-KRecentTracker is a KDE Plasma 6 widget that tracks recently opened files, folders, and workspaces from KDE and VS Code-based editors.
+KRecentTracker is a KDE Plasma 6 widget that provides quick access to recently opened files, folders, workspaces, images, videos, and other items from your desktop. It brings recent items from KDE and VS Code-based editors into a single, fast, and convenient interface.
 
 ## Features
 
@@ -49,28 +49,53 @@ Configure options such as the VS Code database path and the number of displayed 
   </tr>
 </table>
 
+## Use Cases
 
-> More screenshots incoming.
+This plasmoid is designed to make recently opened files and projects easier to find and access directly from your KDE Plasma desktop.
+
+Have you ever opened your file manager, navigated through several directories to find a file, opened it, and then accidentally closed the window without remembering where it was? Instead of navigating through those directories again, simply refresh the plasmoid and the file will appear in your recent items.
+
+The same idea applies to VS Code. Although VS Code already provides a list of recently opened files and projects, this plasmoid provides a faster and more convenient way to access them. It makes it easier to identify the project or file you are looking for and lets you perform actions without opening VS Code first. You can, for example, copy the path, open the project directly in a terminal, or use it for tasks such as running Git commands or cleaning up files.
+
+It is also useful for images, screenshots, videos, and other files that you may open temporarily and then lose track of. If you opened an image and forgot where it was stored, the plasmoid provides a quick way to find it again.
+
+In short, the plasmoid is useful whenever you think:
+
+> "I just opened that file, but where was it?"
+
+## Supported Sources
+
+The plasmoid collects recently opened items from different sources depending on the application.
+
+### VS Code and VS Code-based editors
+
+For VS Code and compatible variants, the plasmoid reads the editor's `.vscdb` database. This is a **SQLite database** used by VS Code to store internal state and information about workspaces, files, and other editor data.
+
+The database contains different types of stored values, including **JSON and binary data**. The plasmoid reads the relevant entries from the database to retrieve recently opened files, folders, and workspaces without having to launch the editor.
+
+### Other applications
+
+For other applications, the plasmoid uses **XBEL** (`.xbel`), an XML-based format used by KDE to keep track of recently accessed files and locations.
+
+The plasmoid reads the relevant entries from the XBEL history and converts them into the same recent-item format used by the widget.
+
+This allows the plasmoid to provide a unified list of recently opened files, folders, projects, images, videos, and other items across different applications.
+
+## Target Audience
+
+This plasmoid is primarily aimed at **KDE Plasma beginners** who want a simple and convenient way to keep track of recently opened files and projects.
+
+It is intended to make the KDE experience more complete and approachable by providing quick access to recently used content directly from the desktop, without requiring users to navigate through their file system or open another application just to find something they recently used.
+
+At the same time, it can also be useful for experienced KDE users who want a faster workflow and quick actions such as copying paths, opening files in a terminal, or launching them with a specific application.
+
+The goal is simple: **make finding and accessing recently used files faster, easier, and more convenient, while making the KDE Plasma experience even better.**
 
 ## Compatibility
 
 Compatible with KDE Plasma 6.
 
 The widget currently focuses on Linux and KDE Plasma environments.
-
-## Supported Sources
-
-Currently supported:
-
-- KDE recent files (`recently-used.xbel`)
-
-- Visual Studio Code
-
-- Code - OSS
-
-- VSCodium
-
-- Other compatible VS Code-based installations
 
 ## Installation
 
