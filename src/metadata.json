@@ -1,0 +1,17 @@
+{
+  "KPlugin": {
+    "Authors": [
+      {
+        "Name": "Pereira"
+      }
+    ],
+    "Category": "Utilities",
+    "Description": "It tracks your recent files, folders and projects from vscode or other code IDE.",
+    "Icon": "icon",
+    "Id": "Pereira.RecentsTracker",
+    "Name": "Recents Tracker",
+    "Version": "0.1.0"
+  },
+  "X-Plasma-API-Minimum-Version": "6.0",
+  "KPackageStructure": "Plasma/Applet"
+}

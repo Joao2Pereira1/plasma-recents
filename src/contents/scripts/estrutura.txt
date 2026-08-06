@@ -1,0 +1,31 @@
+.
+├── open_with_app.py           # Registo e lançamento de apps para o menu "Abrir com":
+│                               # config persistida (apps.json), resolução de comando/
+│                               # nome a partir de executáveis ou .desktop, execução
+│                               # (subprocess) e deteção de duplicados
+│
+├── recent_manager.py           # Orquestrador de alto nível: combina os resultados
+│                               # de várias fontes (VSCode, recently-used.xbel, etc.)
+│                               # e expõe a interface usada pelo plasmoid
+│
+├── utils.py                    # is_path_blacklisted — regras de caminhos a ignorar
+│                               # (ex. pastas temporárias, node_modules), usado para
+│                               # filtrar entradas antes de devolver resultados
+│
+└── vscode_logic/
+    ├── vscode_db_locator.py    # Localiza candidatos a state.vscdb combinando 3 rotas:
+    │                           # override explícito (env var), per-variant via
+    │                           # product.json + fallbacks fixos, e scan genérico
+    │
+    ├── extract_items.py        # Lê e parseia o conteúdo do state.vscdb: decodifica
+    │                           # valores SQLite, converte URIs em paths, normaliza
+    │                           # entradas, agrega/dedupe/filtra (find_recent) e expõe
+    │                           # um modo de debug (inspect_databases)
+    │
+    ├── cli.py                  # Entry point CLI (vscode-recent): argparse + orquestra
+    │                           # find_recent (recentes) e open_with_app (menu "Abrir com"),
+    │                           # comunica com a widget QML via JSON no stdout
+    │
+    └── vscode_registry.py      # Registo central das variantes VS Code (Code, Insiders,
+                                # OSS, VSCodium): metadata para localizar instalações
+                                # (product.json) e para resolver comandos de execução
