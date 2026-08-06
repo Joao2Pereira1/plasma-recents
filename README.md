@@ -30,13 +30,24 @@ Configure options such as the VS Code database path and the number of displayed 
 
 ## Screenshots
 
-<div align="center">
-  <img src="screenshots/files_tab.png" width="600" height="400">
-  <img src="screenshots/folders_tab.png" width="600" height="400">
-  <img src="screenshots/horizontal_layout.png" width="600" height="400">
-  <img src="screenshots/search.png" width="600" height="400">
-  <img src="screenshots/vscode_tab.png" width="600" height="400">
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/vscode_tab.png" width="280" height="500">
+    </td>
+    <td align="center">
+      <img src="screenshots/files_tab.png" width="280" height="500">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshots/horizontal_layout.png" width="500" height="300">
+    </td>
+    <td align="center">
+      <img src="screenshots/search.png" width="500" height="300">
+    </td>
+  </tr>
+</table>
 
 
 > More screenshots incoming.
@@ -98,7 +109,7 @@ The configuration format is still being developed and may change before the firs
 
 KRecentTracker is currently under active development.
 
-Some features are already implemented, while others are planned and tracked in `improvements.md`.
+There are many features incoming.
 
 The project structure and configuration format may change before the first stable release.
 
