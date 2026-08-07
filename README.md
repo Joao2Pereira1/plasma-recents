@@ -97,6 +97,16 @@ Compatible with KDE Plasma 6.
 
 The widget currently focuses on Linux and KDE Plasma environments.
 
+## Dependencies
+
+KRecentTracker is designed for KDE Plasma 6 and has no additional third-party dependencies.
+
+The following components are required:
+
+* **KDE Plasma 6** — required to run the plasmoid.
+* **Python 3** — required by the helper scripts used for VS Code integration.
+* **kpackagetool6** — used by the installer to install and update the plasmoid package.
+
 ## Installation
 
 KRecentTracker is currently under development and does not have an official installation method yet.
