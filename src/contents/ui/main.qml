@@ -36,7 +36,7 @@ PlasmoidItem {
 
     // Message shown at the bottom of the widget.
     // Used for loading information, errors and successful actions.
-    property string statusText: "Loading…"
+    property string statusText: "Press refresh to display items. Loading… "
 
     // List of applications available in the "Open with…" menu.
     property var openWithApps: []
@@ -105,7 +105,7 @@ PlasmoidItem {
         return decodeURIComponent(value)
     }
 
-    // Adds transparency to a theme colour. Used for the
+    // Adds transparency to a theme color. Used for the
     // translucent background/border of the "kind" tag (Workspace/Folder/File).
     function transparentColor(baseColor, alpha) {
         return Qt.rgba(baseColor.r, baseColor.g, baseColor.b, alpha)
@@ -158,11 +158,11 @@ PlasmoidItem {
     // Reloads all three tabs (VS Code / Files / Folders) by calling the
     // helper with no arguments and parsing its JSON response.
     function refresh() {
-        statusText = "Loading recent histories…"
+        statusText = "Loading recent items..."
 
         runHelper("", function(cmd, exitCode, exitStatus, stdout, stderr) {
             if (exitCode !== 0) {
-                statusText = "Helper exited with code " + exitCode + ": " + (stderr.trim() || stdout.trim() || "no output")
+                statusText = "Error on refreshing items " + exitCode + ": " + (stderr.trim() || stdout.trim() || "no output")
                 console.log("refresh() helper failed:", exitCode, exitStatus, stderr)
                 return
             }
@@ -219,7 +219,7 @@ PlasmoidItem {
 
                 statusText = "History synced successfully."
             } catch (e) {
-                statusText = "Failed to parse helper output: " + e.message
+                statusText = "Failed to parse helper output while refreshing items: " + e.message
                 console.log("JSON Parse Error Details:", e)
                 console.log("Stdout received:", stdout)
             }
@@ -236,7 +236,7 @@ PlasmoidItem {
     function loadOpenWithApps() {
         runHelper("--list-apps", function(cmd, exitCode, exitStatus, stdout, stderr) {
             if (exitCode !== 0) {
-                statusText = "Could not load applications (exit " + exitCode + "): " + (stderr.trim() || "no output")
+                statusText = "Could not load applications (app.json) (exit " + exitCode + "): " + (stderr.trim() || "no output")
                 console.log("loadOpenWithApps() helper failed:", exitCode, exitStatus, stderr)
                 return
             }
@@ -250,7 +250,7 @@ PlasmoidItem {
 
                 const payload = JSON.parse(cleanStdout)
                 if (!payload.ok) {
-                    statusText = "Could not load applications: " + (payload.error || "unknown error")
+                    statusText = "Could not load applications (nothing found inside apps.json): " + (payload.error || "unknown error")
                     return
                 }
 
