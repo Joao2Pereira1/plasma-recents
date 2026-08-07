@@ -109,11 +109,19 @@ The following components are required:
 
 ## Installation
 
-KRecentTracker is currently under development and does not have an official installation method yet.
+Clone the repository and run the installation script:
 
-We plan to release the plasmoid through the **KDE Store**. An `installer.sh` script is also planned to make manual installation easier.
+```bash
+git clone https://github.com/joao2pereira1/KRecentTracker.git
+cd KRecentTracker
+./install.sh
+```
 
-Installation instructions will be added once these methods are ready.
+The installer automatically installs the plasmoid using `kpackagetool6`.
+
+Once the installation is complete, open the KDE Plasma widget explorer and add **KRecentTracker** to your desktop or panel.
+
+> **Note:** KRecentTracker is currently under development. An official release through the **KDE Store** is planned for the future.
 
 ## Configuration
 
