@@ -1,8 +1,8 @@
 # Contributing
 
-Thank you for contributing to KRecentTracker.
+Thank you for contributing to Plasma Recents.
 
-KRecentTracker is a KDE Plasma 6 widget, so contributions should aim to keep the project simple, maintainable, and consistent with the existing architecture and KDE conventions.
+Plasma Recents is a KDE Plasma 6 widget, so contributions should aim to keep the project simple, maintainable, and consistent with the existing architecture and KDE conventions.
 
 ## Issues
 
