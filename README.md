@@ -1,10 +1,6 @@
 # Plasma Recents
 
-<<<<<<< HEAD
-KRecentTracker is a KDE Plasma 6 widget that provides quick access to recently opened files, folders, workspaces, images, videos, and other items from your desktop. It brings recent items from KDE and VS Code-based editors into a single, fast, and convenient interface.
-=======
 Plasma Recents is a KDE Plasma 6 widget that provides quick access to recently opened files, folders, workspaces, images, videos, and other items from your desktop. It brings recent items from KDE and VS Code-based editors into a single, fast, and convenient interface.
->>>>>>> main
 
 ## Features
 
@@ -103,11 +99,7 @@ The widget currently focuses on Linux and KDE Plasma environments.
 
 ## Dependencies
 
-<<<<<<< HEAD
-KRecentTracker is designed for KDE Plasma 6 and has no additional third-party dependencies.
-=======
 Plasma Recents is designed for KDE Plasma 6 and has no additional third-party dependencies.
->>>>>>> main
 
 The following components are required:
 
@@ -120,18 +112,6 @@ The following components are required:
 Clone the repository and run the installation script:
 
 ```bash
-<<<<<<< HEAD
-git clone https://github.com/joao2pereira1/KRecentTracker.git
-cd KRecentTracker
-./install.sh
-```
-
-The installer automatically installs the plasmoid using `kpackagetool6`.
-
-Once the installation is complete, open the KDE Plasma widget explorer and add **KRecentTracker** to your desktop or panel.
-
-> **Note:** KRecentTracker is currently under development. An official release through the **KDE Store** is planned for the future.
-=======
 git clone https://github.com/joao2pereira1/plasma-recents.git
 cd plasma-recents
 ```
@@ -170,7 +150,6 @@ sudo dnf install kf6-kpackage
 Once the installation is complete, open the KDE Plasma widget explorer and add **Plasma Recents** to your desktop or panel.
 
 > **Note:** Plasma Recents is currently under development. An official release through the **KDE Store** is planned for the future.
->>>>>>> main
 
 ## Configuration
 
