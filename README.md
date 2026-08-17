@@ -1,6 +1,27 @@
-# Plasma Recents
+<div align="center">
+  <h1> 📁 Plasma Recents </h1>
+</div>
 
 Plasma Recents is a KDE Plasma 6 widget that provides quick access to recently opened files, folders, workspaces, images, videos, and other items from your desktop. It brings recent items from KDE and VS Code-based editors into a single, fast, and convenient interface.
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/vscode_tab.png" width="280" height="500">
+    </td>
+    <td align="center">
+      <img src="screenshots/files_tab.png" width="280" height="500">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="screenshots/horizontal_layout.png" width="500" height="300">
+    </td>
+    <td align="center">
+      <img src="screenshots/search.png" width="500" height="300">
+    </td>
+  </tr>
+</table>
 
 ## Features
 
@@ -27,27 +48,6 @@ Double-click an item to open it with the default system handler.
 
 ⚙️ **Configurable**  
 Configure options such as the VS Code database path and the number of displayed items.
-
-## Screenshots
-
-<table>
-  <tr>
-    <td align="center">
-      <img src="screenshots/vscode_tab.png" width="280" height="500">
-    </td>
-    <td align="center">
-      <img src="screenshots/files_tab.png" width="280" height="500">
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <img src="screenshots/horizontal_layout.png" width="500" height="300">
-    </td>
-    <td align="center">
-      <img src="screenshots/search.png" width="500" height="300">
-    </td>
-  </tr>
-</table>
 
 ## Use Cases
 
