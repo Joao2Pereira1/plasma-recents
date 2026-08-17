@@ -4,7 +4,7 @@ set -euo pipefail
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 PLASMOID_ID="Pereira.RecentsTracker"
-PLASMOID_DIR="$SCRIPT_DIR/package"
+PLASMOID_DIR="$SCRIPT_DIR/src"
 
 log() {
     echo "[install] $*"

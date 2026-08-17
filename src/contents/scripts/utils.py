@@ -2,23 +2,42 @@
 
 import os
 
-# Base system folders and generic roots are ignored to avoid unnecessary items
 HOME_DIR = os.path.expanduser("~")
 
+# Paths that should never appear as recent directories.
+BLACKLIST_EXACT = {
+    "/",
+    "/home",
+    "/run",
+    "/run/media",
+    "/media",
+    "/mnt",
+    HOME_DIR,
+}
+
+# Generic system locations that should not be shown.
 BLACKLIST_PREFIXES = (
-    os.path.join(HOME_DIR, "Downloads"),
     "/tmp/",
-    "/run/media/",
-    "/media/",
-    "/mnt/",
+    "/proc/",
+    "/sys/",
+    "/dev/",
 )
 
 
 def is_path_blacklisted(target_path: str) -> bool:
-    """Verifies if path is identical to a system root or resides inside a blacklisted directory."""
-    if target_path in {HOME_DIR, "/", "/home", "/run", "/run/media"}:
+    """Return True if a path is an unwanted system-level location."""
+
+    if not target_path:
         return True
 
+    # Normalize the path before checking it.
+    target_path = os.path.abspath(os.path.normpath(target_path))
+
+    # Ignore exact system roots.
+    if target_path in BLACKLIST_EXACT:
+        return True
+
+    # Ignore paths inside generic system/runtime directories.
     if target_path.startswith(BLACKLIST_PREFIXES):
         return True
 

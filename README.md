@@ -1,6 +1,10 @@
-# KRecentTracker
+# Plasma Recents
 
+<<<<<<< HEAD
 KRecentTracker is a KDE Plasma 6 widget that provides quick access to recently opened files, folders, workspaces, images, videos, and other items from your desktop. It brings recent items from KDE and VS Code-based editors into a single, fast, and convenient interface.
+=======
+Plasma Recents is a KDE Plasma 6 widget that provides quick access to recently opened files, folders, workspaces, images, videos, and other items from your desktop. It brings recent items from KDE and VS Code-based editors into a single, fast, and convenient interface.
+>>>>>>> main
 
 ## Features
 
@@ -99,7 +103,11 @@ The widget currently focuses on Linux and KDE Plasma environments.
 
 ## Dependencies
 
+<<<<<<< HEAD
 KRecentTracker is designed for KDE Plasma 6 and has no additional third-party dependencies.
+=======
+Plasma Recents is designed for KDE Plasma 6 and has no additional third-party dependencies.
+>>>>>>> main
 
 The following components are required:
 
@@ -112,6 +120,7 @@ The following components are required:
 Clone the repository and run the installation script:
 
 ```bash
+<<<<<<< HEAD
 git clone https://github.com/joao2pereira1/KRecentTracker.git
 cd KRecentTracker
 ./install.sh
@@ -122,6 +131,46 @@ The installer automatically installs the plasmoid using `kpackagetool6`.
 Once the installation is complete, open the KDE Plasma widget explorer and add **KRecentTracker** to your desktop or panel.
 
 > **Note:** KRecentTracker is currently under development. An official release through the **KDE Store** is planned for the future.
+=======
+git clone https://github.com/joao2pereira1/plasma-recents.git
+cd plasma-recents
+```
+
+Before running the installer for the first time, make sure the script has permission to execute:
+
+```bash
+chmod +x installer.sh
+```
+
+Then run the installation script:
+
+```bash
+./installer.sh
+```
+
+The installer automatically installs the plasmoid using `kpackagetool6`.
+
+The installer automatically uses kpackagetool6 to install the plasmoid package. If kpackagetool6 is not available on your system, the installer will attempt to install it automatically.
+
+However, it is recommended to install kpackagetool6 manually beforehand to ensure that the required KDE package management tool is available:
+
+```bash
+# Ubuntu / Debian
+sudo apt install kpackagetool6
+
+# Arch Linux
+sudo pacman -S kpackagetool6
+
+# Fedora
+sudo dnf install kf6-kpackage
+```
+
+> **Note:** Package names may vary slightly depending on the distribution version and KDE Plasma packages available in your repositories. The installer will also attempt to install kpackagetool6 automatically if it is not found.
+
+Once the installation is complete, open the KDE Plasma widget explorer and add **Plasma Recents** to your desktop or panel.
+
+> **Note:** Plasma Recents is currently under development. An official release through the **KDE Store** is planned for the future.
+>>>>>>> main
 
 ## Configuration
 
@@ -150,7 +199,7 @@ The configuration format is still being developed and may change before the firs
 
 ## Project Status
 
-KRecentTracker is currently under active development.
+Plasma Recents is currently under active development.
 
 There are many features incoming.
 
