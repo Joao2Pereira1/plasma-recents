@@ -1,3 +1,5 @@
 notas/
 __pycache__/
 update_local.sh
+src/contents/scripts/estrutura.txt 
+src/contents/scripts/get_vscode_items.md
