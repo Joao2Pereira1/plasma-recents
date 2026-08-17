@@ -1,0 +1,351 @@
+{
+	"vscode": [
+		{
+			"name": "repo",
+			"path": "/home/pereira/projeto_escadas_geradoras/repo",
+			"kind": "folder"
+		},
+		{
+			"name": "projeto_escadas_geradoras",
+			"path": "/home/pereira/projeto_escadas_geradoras",
+			"kind": "folder"
+		},
+		{
+			"name": "src",
+			"path": "/home/pereira/Recent_Tracker/src",
+			"kind": "folder"
+		},
+		{
+			"name": "Recent_Tracker",
+			"path": "/home/pereira/Recent_Tracker",
+			"kind": "folder"
+		},
+		{
+			"name": "scripts",
+			"path": "/home/pereira/.local/share/plasma/plasmoids/Pereira.RecentsTracker/contents/scripts",
+			"kind": "folder"
+		},
+		{
+			"name": "ui",
+			"path": "/home/pereira/.local/share/plasma/plasmoids/luisbocanegra.kdematerialyou.colors/contents/ui",
+			"kind": "folder"
+		},
+		{
+			"name": ".poshthemes",
+			"path": "/home/pereira/.poshthemes",
+			"kind": "folder"
+		},
+		{
+			"name": "~/Documents/PlatformIO/Projects/ADC_continous_mode/src/led_blinking (Workspace)",
+			"path": "/home/pereira/Documents/PlatformIO/Projects/ADC_continous_mode/src/led_blinking.code-workspace",
+			"kind": "workspace"
+		},
+		{
+			"name": "Ant-Dark",
+			"path": "/home/pereira/.local/share/icons/Ant-Dark",
+			"kind": "folder"
+		},
+		{
+			"name": "main.qml",
+			"path": "/home/pereira/Pin/plasmoids/Pereira.RecentsTracker/contents/ui/main.qml",
+			"kind": "file"
+		},
+		{
+			"name": "~/.local/share/plasma/plasmoids/Pereira.RecentsTracker/contents/scripts/open_with_app.py",
+			"path": "/home/pereira/.local/share/plasma/plasmoids/Pereira.RecentsTracker/contents/scripts/open_with_app.py",
+			"kind": "file"
+		},
+		{
+			"name": "main.qml",
+			"path": "/home/pereira/.local/share/plasma/plasmoids/Pereira.RecentsTracker/contents/ui/main.qml",
+			"kind": "file"
+		},
+		{
+			"name": "config.jsonc",
+			"path": "/home/pereira/.config/fastfetch/config.jsonc",
+			"kind": "file"
+		},
+		{
+			"name": "VSC_Costumization.css",
+			"path": "/home/pereira/Documents/VSC_Costumization.css",
+			"kind": "file"
+		},
+		{
+			"name": "catppuccin.omp.json",
+			"path": "/home/pereira/.poshthemes/catppuccin.omp.json",
+			"kind": "file"
+		}
+	],
+	"recent_files": [
+		{
+			"name": "AnimesGamesMangas.txt",
+			"path": "/run/media/Windows-SSD/Pinned/Animes_Games_Sports/AnimesGamesMangas.txt"
+		},
+		{
+			"name": "artist_qingying1.jpg",
+			"path": "/home/pereira/Downloads/walls/artist_qingying1.jpg"
+		},
+		{
+			"name": "geracao_energia.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/geracao_energia.md"
+		},
+		{
+			"name": "arquitetura_sistema.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/arquitetura_sistema.md"
+		},
+		{
+			"name": "pecas.png",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/SolidWorks/pecas.png"
+		},
+		{
+			"name": "Projeto_Escadas_Geradoras.docx",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/Projeto_Escadas_Geradoras.docx"
+		},
+		{
+			"name": "docker.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/docker.md"
+		},
+		{
+			"name": "4_grafana.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/4_grafana.md"
+		},
+		{
+			"name": "3_influxdb.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/3_influxdb.md"
+		},
+		{
+			"name": "2_nodered.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/2_nodered.md"
+		},
+		{
+			"name": "1_mqtt.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/1_mqtt.md"
+		},
+		{
+			"name": "blue_girl.jpg",
+			"path": "/home/pereira/Downloads/walls/blue_girl.jpg"
+		},
+		{
+			"name": "nota.txt",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/nota.txt"
+		},
+		{
+			"name": "README.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/README.md"
+		},
+		{
+			"name": "step5.png",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/screenshots/step5.png"
+		},
+		{
+			"name": "step2.png",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/screenshots/step2.png"
+		},
+		{
+			"name": "step4.png",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/screenshots/step4.png"
+		},
+		{
+			"name": "step3.png",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/screenshots/step3.png"
+		},
+		{
+			"name": "notas_deploy.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/notas_deploy.md"
+		},
+		{
+			"name": "01_comandos.md",
+			"path": "/run/media/Windows-SSD/TechVault/07_Software_Engineering/DOCKER/01_comandos.md"
+		},
+		{
+			"name": "wallhaven-5dj278.jpg",
+			"path": "/home/pereira/Downloads/walls/wallhaven-5dj278.jpg"
+		},
+		{
+			"name": "00_introducao.md",
+			"path": "/run/media/Windows-SSD/TechVault/07_Software_Engineering/DOCKER/00_introducao.md"
+		},
+		{
+			"name": "chainsaw_reze.jpg",
+			"path": "/home/pereira/Downloads/walls/Anime/chainsaw_reze.jpg"
+		},
+		{
+			"name": "boruto.jpg",
+			"path": "/home/pereira/Downloads/walls/Anime/boruto.jpg"
+		},
+		{
+			"name": "prism_rondo.png",
+			"path": "/home/pereira/Downloads/walls/Anime/prism_rondo.png"
+		},
+		{
+			"name": "naruto_sasuke.webp",
+			"path": "/run/media/Windows-SSD/Wallpapers/Animes/naruto_sasuke.webp"
+		},
+		{
+			"name": "jujutsu_choso.jpg",
+			"path": "/run/media/Windows-SSD/Wallpapers/Animes/jujutsu_choso.jpg"
+		},
+		{
+			"name": "red_mecha.jpg",
+			"path": "/home/pereira/Downloads/walls/Anime/red_mecha.jpg"
+		},
+		{
+			"name": "notas2.txt",
+			"path": "/run/media/Windows-SSD/Universidade/2_Ano/2_Semestre/notas2.txt"
+		},
+		{
+			"name": "Screenshot_20260809_145924.png",
+			"path": "/home/pereira/Pictures/Screenshots/Screenshot_20260809_145924.png"
+		},
+		{
+			"name": "remiele_dan.jpg",
+			"path": "/home/pereira/Downloads/walls/remiele_dan.jpg"
+		},
+		{
+			"name": "Ficha de Candidatura - Bolsa de Estudo - Filhos de Colaboradores.pdf",
+			"path": "/run/media/Windows-SSD/Documentos/Bolsa Bosch/2025/Ficha de Candidatura - Bolsa de Estudo - Filhos de Colaboradores.pdf"
+		},
+		{
+			"name": "certificado_mestrado.txt",
+			"path": "/run/media/Windows-SSD/Life/Carreira/02_CV_e_LinkedIn/certificado_mestrado.txt"
+		},
+		{
+			"name": "video_galego_linkedin_curriculo.txt",
+			"path": "/run/media/Windows-SSD/Life/Carreira/02_CV_e_LinkedIn/video_galego_linkedin_curriculo.txt"
+		},
+		{
+			"name": "implementacoes.md",
+			"path": "/home/pereira/Recent_Tracker/notas/implementacoes.md"
+		}
+	],
+	"recent_dirs": [
+		{
+			"name": "docs_pt",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt"
+		},
+		{
+			"name": "geracao_energia.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/geracao_energia.md"
+		},
+		{
+			"name": "arquitetura_sistema.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/arquitetura_sistema.md"
+		},
+		{
+			"name": "SolidWorks",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/SolidWorks"
+		},
+		{
+			"name": "pecas.png",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/SolidWorks/pecas.png"
+		},
+		{
+			"name": "Projeto_Escadas_Geradoras.docx",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/Projeto_Escadas_Geradoras.docx"
+		},
+		{
+			"name": "docker.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/docker.md"
+		},
+		{
+			"name": "4_grafana.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/4_grafana.md"
+		},
+		{
+			"name": "3_influxdb.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/3_influxdb.md"
+		},
+		{
+			"name": "2_nodered.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/2_nodered.md"
+		},
+		{
+			"name": "1_mqtt.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/docs_pt/1_mqtt.md"
+		},
+		{
+			"name": "repo",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo"
+		},
+		{
+			"name": "nota.txt",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/nota.txt"
+		},
+		{
+			"name": "README.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/README.md"
+		},
+		{
+			"name": "screenshots",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/screenshots"
+		},
+		{
+			"name": "step5.png",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/screenshots/step5.png"
+		},
+		{
+			"name": "step2.png",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/screenshots/step2.png"
+		},
+		{
+			"name": "step4.png",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/screenshots/step4.png"
+		},
+		{
+			"name": "step3.png",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/screenshots/step3.png"
+		},
+		{
+			"name": "notas_deploy.md",
+			"path": "/home/pereira/Pin/Life/Carreira/06_Projetos/projeto_escadas_geradoras/repo/notas_deploy.md"
+		},
+		{ "name": "Screenshots", "path": "/home/pereira/Pictures/Screenshots" },
+		{
+			"name": "Screenshot_20260809_145924.png",
+			"path": "/home/pereira/Pictures/Screenshots/Screenshot_20260809_145924.png"
+		},
+		{ "name": "notas", "path": "/home/pereira/Recent_Tracker/notas" },
+		{
+			"name": "implementacoes.md",
+			"path": "/home/pereira/Recent_Tracker/notas/implementacoes.md"
+		},
+		{ "name": "src", "path": "/home/pereira/Recent_Tracker/src" },
+		{
+			"name": "metadata.json",
+			"path": "/home/pereira/Recent_Tracker/src/metadata.json"
+		},
+		{
+			"name": "notas.txt",
+			"path": "/home/pereira/Recent_Tracker/notas/notas.txt"
+		},
+		{
+			"name": "ui",
+			"path": "/home/pereira/Recent_Tracker/src/contents/ui"
+		},
+		{
+			"name": "main.qml",
+			"path": "/home/pereira/Recent_Tracker/src/contents/ui/main.qml"
+		},
+		{
+			"name": "roadmap.txt",
+			"path": "/home/pereira/Recent_Tracker/notas/roadmap.txt"
+		},
+		{ "name": "Recent_Tracker", "path": "/home/pereira/Recent_Tracker" },
+		{
+			"name": "README.md",
+			"path": "/home/pereira/Recent_Tracker/README.md"
+		},
+		{
+			"name": "CHANGELOG.md",
+			"path": "/home/pereira/Recent_Tracker/CHANGELOG.md"
+		},
+		{
+			"name": "components",
+			"path": "/home/pereira/Pin/plasmoids/Pereira.RecentsTracker/contents/ui/components"
+		},
+		{
+			"name": "PlasmoidIcon.qml",
+			"path": "/home/pereira/Pin/plasmoids/Pereira.RecentsTracker/contents/ui/components/PlasmoidIcon.qml"
+		}
+	]
+}
