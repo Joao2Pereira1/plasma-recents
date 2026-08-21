@@ -140,11 +140,14 @@ PlasmoidItem {
 
     // Python helper communication
     // ------------------------------------------------------------------
-
-    // Runs the Python helper and passes its result to the supplied callback.
+    // Runs the Python helper (`main.py`) with the supplied arguments.
     //
-    // Most operations that need filesystem or application information go
-    // through this function.
+    // `helperPath` contains the path to the Python helper.
+    // `args` contains the command and any arguments passed to the helper.
+    // The helper's output is passed to `callback` for further processing.
+    //
+    // Most operations that require filesystem or application information
+    // are handled by the Python helper through this function.
     function runHelper(args, callback) {
         executable.exec("python3 " + shQuote(helperPath) + " " + args, callback)
     }
@@ -331,6 +334,21 @@ PlasmoidItem {
             loadOpenWithApps()
         }
         openWithMenu.popup(button, 0, button.height)
+    }
+
+    // Copy path action
+    // ------------------------------------------------------------------
+    function copyPath(path) {
+        // Send file or folder path to user clipboard
+        const args = "--copy-path " + shQuote(path)
+
+        runHelper(args, function(cmd, exitCode, exitStatus, stdout, stderr) {
+            if (exitCode !== 0) {
+                statusText = "Could not copy path."
+                console.log("copyPath() failed:", exitCode, exitStatus, stderr)
+                return
+            }
+        })
     }
 
     // Search
@@ -709,6 +727,13 @@ PlasmoidItem {
                                     text: "Open with..."
                                     icon.name: "system-run"
                                     onClicked: root.showOpenWithMenu(model.display_path, openWithButton)
+                                }
+
+                                Controls.Button {
+                                    id: copyPathButton
+                                    text: "Copy path"
+                                    icon.name: "path"
+                                    onClicked: root.copyPath(model.display_path)
                                 }
                             }
                         }
