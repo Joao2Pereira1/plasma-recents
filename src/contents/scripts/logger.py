@@ -3,7 +3,7 @@
 """Centralized logging module for the vscode-recent application.
 
 Configures a logger that outputs structured messages to both a persistent log file
-located in the XDG state directory (~/.local/state/vscode-recent/widget.log)
+located in the XDG state directory (~/.local/state/recent-tracker/widget.log)
 and stderr for CLI debugging.
 """
 
