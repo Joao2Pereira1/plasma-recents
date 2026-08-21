@@ -36,12 +36,12 @@ PlasmoidItem {
 
     // Message shown at the bottom of the widget.
     // Used for loading information, errors and successful actions.
-    property string statusText: "Press refresh to display items. Loading… "
+    property string statusText: "Press Refresh to load recent items."
 
-    // List of applications available in the "Open with…" menu.
+    // List of applications available in the "Open with..." menu.
     property var openWithApps: []
 
-    // Path currently selected for the "Open with…" action.
+    // Path currently selected for the "Open with..." action.
     property string selectedOpenWithPath: ""
 
     // Absolute path to apps.json, used by the "Edit apps.json" menu entry.
@@ -162,8 +162,8 @@ PlasmoidItem {
 
         runHelper("", function(cmd, exitCode, exitStatus, stdout, stderr) {
             if (exitCode !== 0) {
-                statusText = "Error on refreshing items " + exitCode + ": " + (stderr.trim() || stdout.trim() || "no output")
-                console.log("refresh() helper failed:", exitCode, exitStatus, stderr)
+                statusText = "Could not refresh recent items."
+                console.log("refresh() failed:", exitCode, exitStatus, stderr)
                 return
             }
 
@@ -217,11 +217,11 @@ PlasmoidItem {
                 // Update the visible list while keeping the current search.
                 applyFilter()
 
-                statusText = "History synced successfully."
+                statusText = "Recent items updated."
             } catch (e) {
-                statusText = "Failed to parse helper output while refreshing items: " + e.message
-                console.log("JSON Parse Error Details:", e)
-                console.log("Stdout received:", stdout)
+                statusText = "Could not load recent items."
+                console.log("refresh() JSON parsing failed:", e.message)
+                console.log("refresh() stdout:", stdout)
             }
         })
     }
@@ -229,36 +229,37 @@ PlasmoidItem {
     // Open with action
     // ------------------------------------------------------------------
 
-    /// Loads the applications used by the "Open with…" menu.
+    /// Loads the applications used by the "Open with..." menu.
     //
     // The Python helper reads apps.json and returns both the applications and
     // the location of the configuration file.
     function loadOpenWithApps() {
         runHelper("--list-apps", function(cmd, exitCode, exitStatus, stdout, stderr) {
             if (exitCode !== 0) {
-                statusText = "Could not load applications (app.json) (exit " + exitCode + "): " + (stderr.trim() || "no output")
-                console.log("loadOpenWithApps() helper failed:", exitCode, exitStatus, stderr)
+                statusText = "Could not load applications."
+                console.log("loadOpenWithApps() failed:", exitCode, exitStatus, stderr)
                 return
             }
 
             try {
                 const cleanStdout = stdout.trim()
                 if (!cleanStdout) {
-                    statusText = "Application list came back empty"
+                    statusText = "No applications are configured."
                     return
                 }
 
                 const payload = JSON.parse(cleanStdout)
                 if (!payload.ok) {
-                    statusText = "Could not load applications (nothing found inside apps.json): " + (payload.error || "unknown error")
+                    statusText = "Could not load applications. (nothing found inside apps.json)"
                     return
                 }
 
                 root.openWithApps = payload.apps || []
                 root.appsConfigPath = payload.appsPath || ""
             } catch (e) {
-                statusText = "Failed to parse application list: " + e.message
-                console.log("Error parsing application list:", e)
+                statusText = "Could not load application list."
+                console.log("loadOpenWithApps() JSON parsing failed:", e.message)
+                console.log("loadOpenWithApps() stdout:", cleanStdout)
             }
         })
     }
@@ -271,9 +272,11 @@ PlasmoidItem {
 
         runHelper(args, function(cmd, exitCode, exitStatus, stdout, stderr) {
             if (exitCode !== 0) {
-                statusText = "Could not open \"" + targetPath + "\" (exit " + exitCode + "): " + (stderr.trim() || stdout.trim() || "no output")
+                statusText = "Could not open the item."
             } else {
-                statusText = "Opened target successfully."
+                statusText = app === "default"
+                    ? "Opened with the default application."
+                    : "Opened with " + app + "."
             }
         })
     }
@@ -283,25 +286,25 @@ PlasmoidItem {
     // After adding it, the application list is refreshed and the selected
     // item is opened with the newly added application.
     function addOpenWithApp(executablePath) {
-        statusText = "Adding and opening application…"
+        statusText = "Adding application..."
         const args = "--add-app " + shQuote(executablePath)
 
         runHelper(args, function(cmd, exitCode, exitStatus, stdout, stderr) {
             if (exitCode !== 0) {
-                statusText = "Could not add application (exit " + exitCode + "): " + (stderr.trim() || stdout.trim() || "no output")
-                console.log("addOpenWithApp() helper failed:", exitCode, exitStatus, stderr)
+                statusText = "Could not add application."
+                console.log("addOpenWithApp() failed:", exitCode, exitStatus, stderr)
                 return
             }
 
             try {
                 const payload = JSON.parse(stdout.trim())
                 if (payload.ok) {
-                    statusText = "Application added successfully."
+                    statusText = "Application added."
 
-                    // Refresh the "Open with…" menu so the new app shows up.
+                    // Refresh the "Open with..." menu so the new app shows up.
                     root.loadOpenWithApps()
 
-                    // Open the item that triggered "Add application…" with
+                    // Open the item that triggered "Add application..." with
                     // the app that was added.
                     if (payload.apps && payload.apps.length > 0) {
                         const lastApp = payload.apps[payload.apps.length - 1]
@@ -310,16 +313,17 @@ PlasmoidItem {
                         root.openPath(root.selectedOpenWithPath, executablePath)
                     }
                 } else {
-                    statusText = "Error adding application: " + (payload.error || "Unknown error")
+                    statusText = "Could not add application."
                 }
             } catch (e) {
-                statusText = "Failed to parse add-app response: " + e.message
-                console.log("Error parsing add-app output:", e)
+                statusText = "Could not process application response."
+                console.log("addOpenWithApp() JSON parsing failed:", e.message)
+                console.log("addOpenWithApp() stdout:", stdout)
             }
         })
     }
 
-    // Opens the "Open with…" menu for a specific item.
+    // Opens the "Open with..." menu for a specific item.
     function showOpenWithMenu(targetPath, button) {
         selectedOpenWithPath = targetPath
         // Load apps if they have not been loaded yet.
@@ -463,7 +467,7 @@ PlasmoidItem {
     // Dialogs & menus
     // ------------------------------------------------------------------
 
-    // File picker used by "Add application…" to choose a .desktop entry.
+    // File picker used by "Add application..." to choose a .desktop entry.
     Dialogs.FileDialog {
         id: appFileDialog
         title: "Choose application"
@@ -476,7 +480,7 @@ PlasmoidItem {
         }
     }
 
-    // "Open with…" context menu: lists known apps plus management actions.
+    // "Open with..." context menu: lists known apps plus management actions.
     Controls.Menu {
         id: openWithMenu
 
@@ -495,7 +499,7 @@ PlasmoidItem {
         Controls.MenuSeparator {}
 
         Controls.MenuItem {
-            text: "Add application…"
+            text: "Add application..."
             onTriggered: appFileDialog.open()
         }
 
@@ -677,7 +681,7 @@ PlasmoidItem {
                                 maximumLineCount: 1
                             }
 
-                            // Row of actions: primary "open" + "open with…"
+                            // Row of actions: primary "open" + "open with..."
                             RowLayout {
                                 Layout.fillWidth: true
 
@@ -694,7 +698,7 @@ PlasmoidItem {
                                             // Files/Folders tabs: let KDE Plasma
                                             // pick the default handler natively.
                                             let fileUrl = "file://" + model.display_path
-                                            console.log("Opening natively via KDE Plasma:", fileUrl)
+                                            console.log("Opening with default handler:", fileUrl)
                                             Qt.openUrlExternally(fileUrl)
                                         }
                                     }
@@ -702,7 +706,7 @@ PlasmoidItem {
 
                                 Controls.Button {
                                     id: openWithButton
-                                    text: "Open with…"
+                                    text: "Open with..."
                                     icon.name: "system-run"
                                     onClicked: root.showOpenWithMenu(model.display_path, openWithButton)
                                 }

@@ -227,13 +227,15 @@ def resolve_app_command(app: str) -> list[str]:
 
 def open_path(path: str, app: str) -> dict[str, Any]:
     """
-    Spawn a detached system background thread processing the open command target.
-    Launches app and returns if it was successful."""
+    Open the given file path using the specified application.
+
+    The application is started as a detached process so the caller
+    does not have to wait for it to finish."""
     target = str(Path(path).expanduser())
     command = resolve_app_command(app) + [target]
 
     try:
-        log.info(f"Launching process: {' '.join(command)}")
+        log.info(f"Opening '{target}' with {app}")
         subprocess.Popen(
             command,
             stdout=subprocess.DEVNULL,
@@ -242,7 +244,7 @@ def open_path(path: str, app: str) -> dict[str, Any]:
         )
         return {"ok": True, "command": command}
     except Exception as exc:
-        log.error(f"Failed to spawn process for command '{' '.join(command)}': {exc}")
+        log.error(f"Could not open '{target}' with {app}: {exc}")
         return {"ok": False, "error": str(exc), "command": command}
 
 
