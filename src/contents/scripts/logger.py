@@ -11,7 +11,7 @@ import logging
 from pathlib import Path
 
 # Standard location for application state/logs in Linux (XDG State)
-LOG_DIR = Path("~/.local/state/vscode-recent").expanduser()
+LOG_DIR = Path("~/.local/state/recent-tracker").expanduser()
 LOG_FILE = LOG_DIR / "widget.log"
 
 
@@ -22,7 +22,7 @@ def setup_logger() -> logging.Logger:
     except Exception:
         pass
 
-    logger = logging.getLogger("vscode_recent")
+    logger = logging.getLogger("recent_tracker")
     logger.setLevel(logging.DEBUG)
 
     # Prevent adding duplicate handlers if setup_logger is called multiple times
