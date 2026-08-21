@@ -25,6 +25,7 @@ try:
     from xbel_logic.extract_items import get_xbel_recent_items
     from vscode_logic.extract_items import find_recent
     from vscode_logic.cli import main as vscode_main
+    from utils.copy_path import copy_to_clipboard
 except ImportError:
     # Just in case the file is in the same directory but not in path
     import sys
@@ -66,15 +67,24 @@ def get_vscode_items(limit) -> list[dict[str, str]]:
 
 def main():
 
-    # If arguments are sent (like --open), forward use cli made for vscode logic
+    # If arguments are provided, use the VS Code CLI logic or other utils.
+    # This allows the QML frontend to request specific operations,
+    # such as listing available applications or opening an item.
     if len(sys.argv) > 1:
-        sys.exit(vscode_main(sys.argv[1:]))
+        command = sys.argv[1]
+        if command == "--copy-path":
+            success = copy_to_clipboard(sys.argv[2])
+            sys.exit(0 if success else 1)  # exitCode
+        else:
+            sys.exit(vscode_main(sys.argv[2:]))
 
-    # Default action: return JSON payload to populate the UI
-    recent_files, recent_dirs = get_xbel_recent_items(limit=35)
-    vscode_items = get_vscode_items(limit=35)
+    # Default action: collect recent items and return them as JSON
+    # to populate the QML interface.
+    recent_files, recent_dirs = get_xbel_recent_items(limit=40)
+    vscode_items = get_vscode_items(limit=40)
 
-    # Master structure optimized for JSON QML parsing
+    # Build a single payload containing all recent item sources.
+    # The structure is optimized for parsing in QML.
     widget_payload = {
         "vscode": vscode_items,
         "recent_files": recent_files,

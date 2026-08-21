@@ -45,7 +45,7 @@ from typing import Any
 from logger import log
 from urllib.parse import unquote, urlparse
 
-from utils import is_path_blacklisted
+from utils.blacklist import is_path_blacklisted
 from vscode_logic.database_locator import db_candidates
 
 # Query shared by read_state_db and inspect_databases: fetches only the

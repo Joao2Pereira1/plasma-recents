@@ -4,7 +4,7 @@ import os
 import xml.etree.ElementTree as ET
 from urllib.parse import unquote, urlparse
 from logger import log
-from utils import is_path_blacklisted
+from utils.blacklist import is_path_blacklisted
 
 
 def get_xbel_recent_items(limit):
