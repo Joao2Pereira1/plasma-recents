@@ -28,6 +28,7 @@ from open_with_app import (
     default_open_with_apps,
 )
 import vscode_logic.database_locator as db_locator
+from vscode_logic.extract_items import find_recent
 
 
 def emit(payload: dict[str, Any]) -> None:
@@ -110,7 +111,7 @@ def main(argv: list[str]) -> int:
             return 0
 
         # Core Default Action: fetch recent lists from decoupled parsing module
-        recent_items = db_locator.find_recent(
+        recent_items = find_recent(
             limit=args.limit, include_missing=args.include_missing, db_override=args.db
         )
 
