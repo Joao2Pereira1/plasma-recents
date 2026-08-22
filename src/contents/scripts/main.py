@@ -76,7 +76,7 @@ def main():
             success = copy_to_clipboard(sys.argv[2])
             sys.exit(0 if success else 1)  # exitCode
         else:
-            sys.exit(vscode_main(sys.argv[2:]))
+            sys.exit(vscode_main(sys.argv[1:]))
 
     # Default action: collect recent items and return them as JSON
     # to populate the QML interface.
