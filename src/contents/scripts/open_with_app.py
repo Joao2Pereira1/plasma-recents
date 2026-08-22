@@ -74,7 +74,7 @@ GENERIC_KNOWN_APPS: dict[str, tuple[str, str | None]] = {
 
 def apps_config_path() -> Path:
     """Return the Path to the applications configuration file aligned with the widget."""
-    config_dir = Path("~/.config/vscode-recents-widget").expanduser()  # ~ -> /home/usr
+    config_dir = Path("~/.config/recents-tracker-widget").expanduser()  # ~ -> /home/usr
     config_dir.mkdir(parents=True, exist_ok=True)
     return config_dir / "apps.json"
 
