@@ -37,6 +37,7 @@ Extraction flow:
 
 import json
 import shutil
+import sys
 import sqlite3
 import tempfile
 from contextlib import contextmanager
@@ -410,3 +411,30 @@ def find_recent(
         "errors": errors,
         "checked": checked,
     }
+
+
+def get_vscode_items(limit) -> list[dict[str, str]]:
+    """Fetches VS Code recent items and structures them by name, path, and kind."""
+    try:
+        result = find_recent(limit=limit, include_missing=False, db_override=None)
+
+        # dynamic dict response validation matching new structure
+        if isinstance(result, dict) and "items" in result:
+            return [
+                {
+                    "name": item["name"],
+                    "path": item["path"],
+                    "kind": item["kind"],
+                }
+                for item in result["items"]
+            ]
+    except Exception as e:
+        print(f"Internal debug error: {e}", file=sys.stderr)
+        return [
+            {
+                "name": f"Error loading VSCode items: {str(e)}",
+                "path": "",
+                "kind": "file",
+            }
+        ]
+    return []

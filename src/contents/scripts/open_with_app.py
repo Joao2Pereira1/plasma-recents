@@ -42,7 +42,7 @@ from vscode_logic.vscode_registry import VSCODE_REGISTRY, get_vscode_commands
 
 # General known applications mapping
 GENERIC_KNOWN_APPS: dict[str, tuple[str, str | None]] = {
-    # Text Editors
+    # Text Editors / IDEs
     "subl": ("Sublime Text", None),
     "zed": ("Zed", None),
     "kate": ("Kate", None),
@@ -54,17 +54,87 @@ GENERIC_KNOWN_APPS: dict[str, tuple[str, str | None]] = {
     "notepad++": ("Notepad++", None),
     "notepad": ("Notepad", None),
     "marktext": ("MarkText", None),
+    "code": ("Visual Studio Code", None),
+    "codium": ("VSCodium", None),
+    "gedit": ("Text Editor (GEdit)", None),
+    "geany": ("Geany", None),
+    "emacs": ("Emacs", None),
+    "atom": ("Atom", None),
+    "pycharm": ("PyCharm", None),
+    "clion": ("CLion", None),
+    "idea": ("IntelliJ IDEA", None),
+    "android-studio": ("Android Studio", None),
+    "qtcreator": ("Qt Creator", None),
+    "gnome-text-editor": ("Text Editor (GNOME)", None),
+    "featherpad": ("FeatherPad", None),
+    "leafpad": ("Leafpad", None),
+    "xed": ("Xed", None),
     # File Managers
     "dolphin": ("Dolphin", None),
     "nemo": ("Nemo", None),
     "nautilus": ("Nautilus", None),
     "thunar": ("Thunar", None),
-    # Multimedia & Browsers
+    "pcmanfm": ("PCManFM", None),
+    "pcmanfm-qt": ("PCManFM-Qt", None),
+    "krusader": ("Krusader", None),
+    "ranger": ("Ranger", None),
+    "nnn": ("nnn", None),
+    "spacefm": ("SpaceFM", None),
+    "caja": ("Caja", None),
+    # Multimedia (.mp4 .mov)
     "vlc": ("VLC Media Player", None),
     "gimp": ("GIMP", None),
+    "mpv": ("mpv", None),
+    "mplayer": ("MPlayer", None),
+    "audacious": ("Audacious", None),
+    "audacity": ("Audacity", None),
+    "clementine": ("Clementine", None),
+    "rhythmbox": ("Rhythmbox", None),
+    "elisa": ("Elisa", None),
+    "kdenlive": ("Kdenlive", None),
+    "shotcut": ("Shotcut", None),
+    "inkscape": ("Inkscape", None),
+    "krita": ("Krita", None),
+    "blender": ("Blender", None),
+    "gwenview": ("Gwenview", None),
+    "eog": ("Eye of GNOME", None),
+    "feh": ("feh", None),
+    "shotwell": ("Shotwell", None),
+    "digikam": ("digiKam", None),
+    # Browsers (open HTML, PDFs, etc.)
     "brave": ("Brave Browser", None),
     "chrome": ("Google Chrome", None),
+    "chromium": ("Chromium", None),
     "firefox": ("Firefox", None),
+    "opera": ("Opera", None),
+    "vivaldi": ("Vivaldi", None),
+    "epiphany": ("GNOME Web (Epiphany)", None),
+    "falkon": ("Falkon", None),
+    "konqueror": ("Konqueror", None),
+    "microsoft-edge": ("Microsoft Edge", None),
+    "librewolf": ("LibreWolf", None),
+    # Office / Documentos
+    "libreoffice": ("LibreOffice", None),
+    "libreoffice-writer": ("LibreOffice Writer", None),
+    "libreoffice-calc": ("LibreOffice Calc", None),
+    "libreoffice-impress": ("LibreOffice Impress", None),
+    "okular": ("Okular", None),
+    "evince": ("Evince (Document Viewer)", None),
+    "xpdf": ("Xpdf", None),
+    "zathura": ("Zathura", None),
+    "obsidian": ("Obsidian", None),
+    "typora": ("Typora", None),
+    "joplin": ("Joplin", None),
+    # Zippers
+    "ark": ("Ark", None),
+    "file-roller": ("File Roller", None),
+    "xarchiver": ("Xarchiver", None),
+    "engrampa": ("Engrampa", None),
+    "peazip": ("PeaZip", None),
+    # Development
+    "meld": ("Meld", None),
+    "dbeaver": ("DBeaver", None),
+    # Default System Handler
     "xdg-open": ("Default System Handler", None),
 }
 
@@ -232,7 +302,17 @@ def open_path(path: str, app: str) -> dict[str, Any]:
     The application is started as a detached process so the caller
     does not have to wait for it to finish."""
     target = str(Path(path).expanduser())
-    command = resolve_app_command(app) + [target]
+    command = resolve_app_command(app)
+
+    print(target, command)
+
+    # Open VS Code projects/folders in a new window.
+    if app.lower() in get_vscode_commands() and Path(target).is_dir():
+        # remove -r (reuse) argument to open project in new window
+        command.remove("-r")
+        command = [*command, "--new-window"]
+
+    command.append(target)
 
     try:
         log.info(f"Opening '{target}' with {app}")
