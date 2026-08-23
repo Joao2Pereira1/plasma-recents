@@ -151,41 +151,108 @@ Once the installation is complete, open the KDE Plasma widget explorer and add *
 
 > **Note:** Plasma Recents is currently under development. An official release through the **KDE Store** is planned for the future.
 
-## Configuration
+## CLI
 
-The widget uses separate JSON files for persistent data:
+Plasma Recents includes a Python CLI to interact with the backend without opening the widget, mainly useful for development and debugging.
 
-```text
-config.json
-├── max_items
-├── page_size
-├── show_missing_files
-├── vscode_db_path
-├── excluded_directories
-├── show_vscode_tab
-└── ...
+Commands should be run from the directory containing `main.py`:
 
-apps.json
-└── Applications available in "Open With"
+bash
 
-history.json
-├── App usage
-├── Favorites
-└── Frecency data
+```bash
+python main.py <command>
 ```
 
-The configuration format is still being developed and may change before the first stable release.
+| Command                     | Function                                                                   |
+| --------------------------- | -------------------------------------------------------------------------- |
+| `-h`, `--help`              | Show CLI help                                                              |
+| `--list-dbs`                | List detected SQLite databases                                             |
+| `--inspect-dbs`             | Inspect database contents (useful when developing parsers)                 |
+| `--list-apps`               | List configured applications                                               |
+| `--apps-path`               | Show the paths used to locate configured applications                      |
+| `--add-app <path>`          | Add an application by its executable path (e.g. `--add-app /usr/bin/code`) |
+| `--open <path> --app <app>` | Open a file/folder with the given application                              |
+| `--copy-path <path>`        | Copy an item's absolute path to the clipboard                              |
+| *(no arguments)*            | Run the backend normally, producing the JSON consumed by the QML frontend  |
+
+> You can create a shell alias (e.g. `alias recent-tracker='python /path/to/main.py'`) in `~/.bashrc` or `~/.config/fish/config.fish` to use the CLI from any directory without typing the full path.
+
+## Development and Testing
+
+The CLI lets you test individual backend components without launching the plasmoid — generally faster than repeatedly interacting with the QML interface.
+
+Typical development workflow:
+
+bash
+
+```bash
+python main.py --list-dbs
+python main.py --inspect-dbs
+python main.py --list-apps
+python main.py --apps-path
+python main.py --open /tmp/test.txt --app kate
+python main.py --copy-path /tmp/test.txt
+```
+
+After verifying the backend, test the widget with:
+
+bash
+
+```bash
+plasmoidviewer --applet Pereira.RecentsTracker
+```
+
+If the plasmoid is already running in the Plasma panel and you need to reload changes:
+
+bash
+
+```bash
+plasmashell --replace & disown
+```
+
+## Configuration and Data
+
+Plasma Recents stores its persistent configuration and runtime data in the user's XDG directories.
+
+### Configuration
+
+```
+~/.config/recents-tracker-widget/
+├── config.json    # widget configuration (max_items, page_sizes, vscode_db_path, ...)
+├── apps.json      # applications available through "Open With"
+└── history.json   # usage, favorites, and frecency data
+```
+
+`config.json` includes, among others: `max_items`, `page_sizes`, `missing_files`, `vscode_db_path`, `excluded_directories`, `show_vscode_tab`.
+
+> ⚠️ The configuration format is still under development and may change or be only partially implemented.
+
+### Logs
+
+```
+~/.local/state/recent-tracker/
+```
+
+Useful for diagnosing backend or plasmoid issues — for example, when an item isn't detected, an application fails to launch, or a database parser behaves unexpectedly. Check the logs before debugging the QML frontend.
+
+## Quick Reference
+
+| Location                                        | Purpose                     |
+| ----------------------------------------------- | --------------------------- |
+| `~/.config/recents-tracker-widget/`             | Persistent configuration    |
+| `~/.config/recents-tracker-widget/config.json`  | Widget configuration        |
+| `~/.config/recents-tracker-widget/apps.json`    | Configured applications     |
+| `~/.config/recents-tracker-widget/history.json` | Favorites and usage history |
+| `~/.local/state/recent-tracker/`                | Runtime logs                |
 
 ## Project Status
 
 Plasma Recents is currently under active development.
 
-There are many features incoming.
-
-The project structure and configuration format may change before the first stable release.
+Many features are planned and being implemented. The project structure, CLI, configuration format, and internal APIs may change before the first stable release.
 
 ## License
 
 This project is licensed under the GNU General Public License v3.0.
 
-See the `LICENSE` file for details.
+See the [LICENSE](LICENSE) file for details.
