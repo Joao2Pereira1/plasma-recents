@@ -498,6 +498,11 @@ PlasmoidItem {
         }
     }
 
+    // refresh items after plasmoid boot
+    Component.onCompleted: {
+        Qt.callLater(refresh)
+    }
+
     // "Open with..." context menu: lists known apps plus management actions.
     Controls.Menu {
         id: openWithMenu
