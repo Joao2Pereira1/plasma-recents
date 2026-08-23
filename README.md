@@ -196,15 +196,13 @@ python main.py --copy-path /tmp/test.txt
 
 After verifying the backend, test the widget with:
 
-bash
+
 
 ```bash
 plasmoidviewer --applet Pereira.RecentsTracker
 ```
 
 If the plasmoid is already running in the Plasma panel and you need to reload changes:
-
-bash
 
 ```bash
 plasmashell --replace & disown
