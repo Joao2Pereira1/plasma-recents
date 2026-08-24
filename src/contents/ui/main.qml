@@ -662,7 +662,6 @@ PlasmoidItem {
                         onDoubleClicked: {
                             if (tabBar.currentIndex === 0) {
                                 // VS Code tab
-
                             } else {
                                 // Files/Folders tabs
                                 let fileUrl = "file://" + model.display_path
