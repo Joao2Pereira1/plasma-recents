@@ -1,5 +1,15 @@
 <div align="center">
-  <h1> 📁 Plasma Recents </h1>
+  <h1>📁 Plasma Recents</h1>
+
+  <a href="https://quickshell.org/">
+    <img src="https://img.shields.io/badge/QuickShell-000000?style=for-the-badge&logo=linux&logoColor=white" alt="QuickShell">
+  </a>
+  <a href="https://www.python.org/">
+    <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
+  </a>
+  <a href="https://ko-fi.com/joao_pereira">
+    <img src="https://img.shields.io/badge/Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-fi">
+  </a>
 </div>
 
 Plasma Recents is a KDE Plasma 6 widget that provides quick access to recently opened files, folders, workspaces, images, videos, and other items from your desktop. It brings recent items from KDE and VS Code-based editors into a single, fast, and convenient interface.
