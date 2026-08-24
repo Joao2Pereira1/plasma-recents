@@ -49,6 +49,22 @@ Double-click an item to open it with the default system handler.
 ⚙️ **Configurable**  
 Configure options such as the VS Code database path and the number of displayed items.
 
+## Incoming Features
+
+The following features are planned for upcoming releases of Plasma Recents. They are focused on improving usability, customization, and interaction with recent items.
+
+- **Open in Terminal** — quickly open the location of a recent file or directory in the user's default terminal. Files will open in their parent directory, while directories will open directly in that location.
+
+- **Configurable Item Limit** — allow users to control how many recent items are retrieved and displayed, making it possible to reduce clutter or access a larger history of recent items.
+
+- **Show or Hide Tabs** — allow individual sections such as VS Code, files, and directories to be enabled or disabled according to the user's preferences.
+
+- 
+
+- **Favorites / Pinned Items** — allow frequently used files and directories to be pinned so they remain easily accessible independently of their recent-item history.
+
+- **Multi-selection & Batch Actions** — support file-manager-style selection with `Ctrl + Click` and `Shift + Click`, enabling actions to be performed on multiple recent items at once, such as opening several items or copying their paths.
+
 ## Use Cases
 
 This plasmoid is designed to make recently opened files and projects easier to find and access directly from your KDE Plasma desktop.
@@ -195,8 +211,6 @@ python main.py --copy-path /tmp/test.txt
 ```
 
 After verifying the backend, test the widget with:
-
-
 
 ```bash
 plasmoidviewer --applet Pereira.RecentsTracker
