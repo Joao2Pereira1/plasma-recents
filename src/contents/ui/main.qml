@@ -661,9 +661,12 @@ PlasmoidItem {
                         // Double click performs the same action as the "Open" button
                         onDoubleClicked: {
                             if (tabBar.currentIndex === 0) {
-                                // VS Code tab
+                                // VS Code tab: always open via the
+                                // helper so it's launched with `code`.
+                                root.openPath(model.display_path, "code")
                             } else {
-                                // Files/Folders tabs
+                                // Files/Folders tabs: let KDE Plasma
+                                // pick the default handler natively.
                                 let fileUrl = "file://" + model.display_path
                                 console.log("Opening with default handler:", fileUrl)
                                 Qt.openUrlExternally(fileUrl)
