@@ -498,7 +498,7 @@ PlasmoidItem {
         }
     }
 
-    // refresh items after plasmoid boot
+    // Refresh items after plasmoid boot
     Component.onCompleted: {
         Qt.callLater(refresh)
     }

@@ -37,7 +37,7 @@ def setup_logger() -> logging.Logger:
 
     try:
         # File Handler (Stores history of errors, warnings, and system events)
-        file_handler = logging.FileHandler(LOG_FILE, encoding="utf-8")
+        file_handler = logging.FileHandler(LOG_FILE, mode="w", encoding="utf-8")
         file_handler.setLevel(logging.INFO)
         file_handler.setFormatter(formatter)
         logger.addHandler(file_handler)
