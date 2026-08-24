@@ -551,8 +551,6 @@ PlasmoidItem {
 
         Components.PlasmoidIcon {
             anchors.fill: parent
-            // Pass the fully resolved icon URL (not just "icon") so the
-            // custom SVG actually resolves correctly.
             customIcon: root.Plasmoid.icon
             activeIcon: compactMouse.containsMouse
         }
@@ -648,6 +646,8 @@ PlasmoidItem {
                 Layout.fillHeight: true
                 clip: true
 
+
+
                 ListView {
                     id: listView
                     model: root.currentModel // swapped on tab change
@@ -657,6 +657,19 @@ PlasmoidItem {
                     delegate: Controls.ItemDelegate {
                         width: listView.width
                         implicitHeight: itemLayout.implicitHeight + Kirigami.Units.smallSpacing * 2
+
+                        // Double click performs the same action as the "Open" button
+                        onDoubleClicked: {
+                            if (tabBar.currentIndex === 0) {
+                                // VS Code tab
+
+                            } else {
+                                // Files/Folders tabs
+                                let fileUrl = "file://" + model.display_path
+                                console.log("Opening with default handler:", fileUrl)
+                                Qt.openUrlExternally(fileUrl)
+                            }
+                        }
 
                         contentItem: ColumnLayout {
                             id: itemLayout
