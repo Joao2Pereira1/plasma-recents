@@ -12,7 +12,7 @@
   </a>
 </div>
 
-Plasma Recents is a KDE Plasma 6 widget that provides quick access to recently opened files, folders, workspaces, images, videos, and other items from your desktop. It brings recent items from KDE and VS Code-based editors into a single, fast, and convenient interface.
+Plasma Recents is a KDE Plasma 6 widget that provides quick access to recently opened files, folders, workspaces, images, videos, and other items. It combines recent items from KDE and VS Code-based editors into a single, lightweight interface with quick actions for interacting with them.
 
 <table>
   <tr>
@@ -36,6 +36,16 @@ Plasma Recents is a KDE Plasma 6 widget that provides quick access to recently o
 ## Demo
 
 https://github.com/user-attachments/assets/5fa41cc4-5a32-432b-85d9-b61b0cc78817
+
+## Why Plasma Recents?
+
+KDE Plasma already provides access to recent items through its application launcher, but Plasma Recents focuses specifically on recent files, folders, and projects in a single, dedicated widget.
+
+Unlike a general filesystem indexer such as **Baloo**, Plasma Recents does not require system-wide indexing to provide this functionality. It reads recent-item information directly from KDE and VS Code-based editors, making it a lightweight alternative for users who do not need filesystem indexing.
+
+It also provides actions directly on recent items, such as **Copy Path**, **Open With**, and double-click to open.
+
+The goal is simple: bring **files, folders, and VS Code projects together in one place**, while providing quick actions that are useful in everyday workflows.
 
 ## Features
 
