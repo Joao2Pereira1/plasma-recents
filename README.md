@@ -33,6 +33,10 @@ Plasma Recents is a KDE Plasma 6 widget that provides quick access to recently o
   </tr>
 </table>
 
+## Demo
+
+https://github.com/user-attachments/assets/5fa41cc4-5a32-432b-85d9-b61b0cc78817
+
 ## Features
 
 📁 **Recent Files & Folders**  
