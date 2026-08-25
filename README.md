@@ -47,17 +47,11 @@ Quickly find items within each recent-items tab.
 📂 **Open With**  
 Open an item with the default system handler or choose another application from the "Open With" menu.
 
-⭐ **Favorites**  
-Pin frequently used files, folders, or workspaces so they remain easily accessible.
-
 📋 **Copy Path**  
 Quickly copy the full path of an item.
 
 🖱️ **Double-click**  
 Double-click an item to open it with the default system handler.
-
-⚙️ **Configurable**  
-Configure options such as the VS Code database path and the number of displayed items.
 
 ## Incoming Features
 
