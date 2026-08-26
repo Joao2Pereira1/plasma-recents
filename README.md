@@ -10,6 +10,9 @@
   <a href="https://ko-fi.com/joao_pereira">
     <img src="https://img.shields.io/badge/Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-fi">
   </a>
+  <a href="https://store.kde.org/p/2369537">
+    <img src="https://img.shields.io/badge/KDE%20Store-1D99F3?style=for-the-badge&logo=kde&logoColor=white" alt="KDE Store">
+  </a>
 </div>
 
 Plasma Recents is a KDE Plasma 6 widget that provides quick access to recently opened files, folders, workspaces, images, videos, and other items. It combines recent items from KDE and VS Code-based editors into a single, lightweight interface with quick actions for interacting with them.
