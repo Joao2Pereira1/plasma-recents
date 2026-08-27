@@ -80,53 +80,42 @@ The following features are planned for upcoming releases of Plasma Recents. They
 
 - **Show or Hide Tabs** — allow individual sections such as VS Code, files, and directories to be enabled or disabled according to the user's preferences.
 
-- 
-
 - **Favorites / Pinned Items** — allow frequently used files and directories to be pinned so they remain easily accessible independently of their recent-item history.
 
 - **Multi-selection & Batch Actions** — support file-manager-style selection with `Ctrl + Click` and `Shift + Click`, enabling actions to be performed on multiple recent items at once, such as opening several items or copying their paths.
 
 ## Use Cases
 
-This plasmoid is designed to make recently opened files and projects easier to find and access directly from your KDE Plasma desktop.
+- **Quickly** find and access files, folders, and projects you've recently used — without navigating through your filesystem again.
 
-Have you ever opened your file manager, navigated through several directories to find a file, opened it, and then accidentally closed the window without remembering where it was? Instead of navigating through those directories again, simply refresh the plasmoid and the file will appear in your recent items.
+- **Recent files** — Find documents, images, videos, screenshots, and other files you opened recently.
 
-The same idea applies to VS Code. Although VS Code already provides a list of recently opened files and projects, this plasmoid provides a faster and more convenient way to access them. It makes it easier to identify the project or file you are looking for and lets you perform actions without opening VS Code first. You can, for example, copy the path, open the project directly in a terminal, or use it for tasks such as running Git commands or cleaning up files.
+- **Projects** — Quickly access VS Code and other editor workspaces.
+Quick actions — Copy paths, open items with a specific application, or use them directly from a terminal.
 
-It is also useful for images, screenshots, videos, and other files that you may open temporarily and then lose track of. If you opened an image and forgot where it was stored, the plasmoid provides a quick way to find it again.
-
-In short, the plasmoid is useful whenever you think:
-
-> "I just opened that file, but where was it?"
+- **Lost something?** — If you remember "I just opened that file, but where was it?", the plasmoid helps you find it again.
 
 ## Supported Sources
 
-The plasmoid collects recently opened items from different sources depending on the application.
+The plasmoid collects recently opened items from 2 sources:
 
 ### VS Code and VS Code-based editors
 
-For VS Code and compatible variants, the plasmoid reads the editor's `.vscdb` database. This is a **SQLite database** used by VS Code to store internal state and information about workspaces, files, and other editor data.
-
-The database contains different types of stored values, including **JSON and binary data**. The plasmoid reads the relevant entries from the database to retrieve recently opened files, folders, and workspaces without having to launch the editor.
+Reads the editor's .vscdb SQLite database to retrieve recently opened files, folders, and workspaces — without launching the editor.
 
 ### Other applications
 
-For other applications, the plasmoid uses **XBEL** (`.xbel`), an XML-based format used by KDE to keep track of recently accessed files and locations.
+Reads KDE's XBEL (.xbel) history to retrieve recently accessed files and locations.
 
-The plasmoid reads the relevant entries from the XBEL history and converts them into the same recent-item format used by the widget.
-
-This allows the plasmoid to provide a unified list of recently opened files, folders, projects, images, videos, and other items across different applications.
+Both sources are combined into a single list, giving you one place to access recent files, folders, projects, and other content.
 
 ## Target Audience
 
-This plasmoid is primarily aimed at **KDE Plasma beginners** who want a simple and convenient way to keep track of recently opened files and projects.
+Designed for KDE Plasma users who want a faster way to access recently used content.
 
-It is intended to make the KDE experience more complete and approachable by providing quick access to recently used content directly from the desktop, without requiring users to navigate through their file system or open another application just to find something they recently used.
+It is simple enough for beginners while providing useful shortcuts for experienced users, such as copying paths, opening items in a terminal, or choosing a specific application.
 
-At the same time, it can also be useful for experienced KDE users who want a faster workflow and quick actions such as copying paths, opening files in a terminal, or launching them with a specific application.
-
-The goal is simple: **make finding and accessing recently used files faster, easier, and more convenient, while making the KDE Plasma experience even better.**
+The goal: make recently used content faster and easier to find.
 
 ## Compatibility
 
