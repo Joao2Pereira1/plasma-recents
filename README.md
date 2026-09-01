@@ -7,11 +7,14 @@
   <a href="https://www.python.org/">
     <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   </a>
+  <a href="https://store.kde.org/p/2369537">
+    <img src="https://img.shields.io/badge/KDE%20Store-1D99F3?style=for-the-badge&logo=kde&logoColor=white" alt="KDE Store">
+  </a>
   <a href="https://ko-fi.com/joao_pereira">
     <img src="https://img.shields.io/badge/Ko--fi-FF5E5B?style=for-the-badge&logo=ko-fi&logoColor=white" alt="Ko-fi">
   </a>
-  <a href="https://store.kde.org/p/2369537">
-    <img src="https://img.shields.io/badge/KDE%20Store-1D99F3?style=for-the-badge&logo=kde&logoColor=white" alt="KDE Store">
+  <a href="https://www.paypal.com/donate/?hosted_button_id=TD3SCYXU5BTQY">
+    <img src="https://img.shields.io/badge/PayPal-00457C?style=for-the-badge&logo=paypal&logoColor=white" alt="Donate with PayPal">
   </a>
 </div>
 
